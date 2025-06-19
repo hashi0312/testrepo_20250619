@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日本の100名城</title>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+    <header>
+        <h1>日本の100名城</h1>
+        <div class="header-ornament"></div>
+    </header>
+
+    <div class="content-wrapper">
+        <aside class="castle-menu">
+            <div class="region-group">
+                <div class="region-header" data-region="hokkaido-tohoku">
+                    <span class="region-name">北海道・東北地方</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <ul class="castle-list">
+                    <li data-castle="goryokaku">五稜郭（北海道）</li>
+                    <li data-castle="hirosaki">弘前城（青森県）</li>
+                    <li data-castle="kubota">久保田城（秋田県）</li>
+                </ul>
+            </div>
+
+            <div class="region-group">
+                <div class="region-header" data-region="kanto">
+                    <span class="region-name">関東地方</span>
+                    <span class="toggle-icon">▼</span>
+                </div>
+                <ul class="castle-list">
+                    <li data-castle="edo">江戸城（東京都）</li>
+                    <li data-castle="odawara">小田原城（神奈川県）</li>
+                    <li data-castle="kawagoe">川越城（埼玉県）</li>
+                </ul>
+            </div>
+
+            <!-- 他の地方も同様に追加 -->
+        </aside>
+
+        <main class="castle-content">
+            <div class="castle-details" id="default-content">
+                <p class="welcome-message">左のメニューから城を選択してください</p>
+            </div>
+
+            <!-- 城の詳細テンプレート（非表示） -->
+            <template id="castle-template">
+                <div class="castle-details">
+                    <h2 class="castle-name"></h2>
+                    <div class="castle-images">
+                        <div class="image-slider">
+                            <div class="slider-container">
+                                <!-- 画像はJavaScriptで動的に追加 -->
+                            </div>
+                            <div class="slider-nav">
+                                <button class="prev">◀</button>
+                                <button class="next">▶</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="castle-info">
+                        <div class="info-section">
+                            <h3>住所</h3>
+                            <p class="address"></p>
+                        </div>
+                        <div class="info-section">
+                            <h3>アクセス</h3>
+                            <div class="access">
+                                <p class="station"></p>
+                                <p class="car"></p>
+                                <p class="walk"></p>
+                            </div>
+                        </div>
+                        <div class="info-section">
+                            <h3>見どころ</h3>
+                            <p class="highlights"></p>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </main>
+    </div>
+
+    <script src="test.js"></script>
+</body>
+</html>
+
