@@ -1,0 +1,218 @@
+/* 和風カラーパレット */
+:root {
+    --japanese-indigo: #1B315E;
+    --japanese-crimson: #8E354A;
+    --japanese-gold: #B4A582;
+    --japanese-paper: #F7F6F3;
+    --japanese-black: #2B2B2B;
+    --japanese-white: #F5F5F5;
+}
+
+/* ベーススタイル */
+body {
+    font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", serif;
+    background-color: var(--japanese-paper);
+    color: var(--japanese-black);
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+}
+
+/* ヘッダー */
+header {
+    background: var(--japanese-indigo);
+    color: var(--japanese-white);
+    padding: 1.5rem 0;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    letter-spacing: 0.2em;
+}
+
+.header-ornament::before,
+.header-ornament::after {
+    content: '❖';
+    color: var(--japanese-gold);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-ornament::before {
+    left: 2rem;
+}
+
+.header-ornament::after {
+    right: 2rem;
+}
+
+/* コンテンツレイアウト */
+.content-wrapper {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+/* サイドメニュー */
+.castle-menu {
+    flex: 0 0 300px;
+    background: var(--japanese-white);
+    padding: 1.5rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.region-group {
+    margin-bottom: 1.5rem;
+}
+
+.region-header {
+    background: var(--japanese-indigo);
+    color: var(--japanese-white);
+    padding: 0.8rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.region-header:hover {
+    background: var(--japanese-crimson);
+}
+
+.castle-list {
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    display: none;
+}
+
+.castle-list.active {
+    display: block;
+}
+
+.castle-list li {
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.castle-list li:hover {
+    background: var(--japanese-gold);
+    color: var(--japanese-white);
+    padding-left: 1.5rem;
+}
+
+/* メインコンテンツエリア */
+.castle-content {
+    flex: 1;
+    background: var(--japanese-white);
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.castle-details {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.castle-details h2 {
+    color: var(--japanese-indigo);
+    border-bottom: 2px solid var(--japanese-gold);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+/* 画像スライダー */
+.image-slider {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.slider-container {
+    display: flex;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.slider-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-nav button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.slider-nav .prev {
+    left: 1rem;
+}
+
+.slider-nav .next {
+    right: 1rem;
+}
+
+/* 城の情報セクション */
+.info-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(180, 165, 130, 0.1);
+    border-radius: 4px;
+}
+
+.info-section h3 {
+    color: var(--japanese-crimson);
+    margin-top: 0;
+    border-left: 4px solid var(--japanese-gold);
+    padding-left: 1rem;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .castle-menu {
+        flex: none;
+        width: 100%;
+    }
+
+    .castle-content {
+        padding: 1rem;
+    }
+
+    .header-ornament::before,
+    .header-ornament::after {
+        display: none;
+    }
+}
+
+/* 歓迎メッセージ */
+.welcome-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--japanese-indigo);
+    padding: 3rem;
+}
